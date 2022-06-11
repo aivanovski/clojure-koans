@@ -1,5 +1,7 @@
 *~
 bin
+.clj-kondo/
+.lsp/
 releases
 *.jar
 
