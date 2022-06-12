@@ -9,10 +9,10 @@
                           (interpose ", " (cons a more)))
                    "!")))
 
-(defmulti diet (fn [x] ((println "abc") (:eater x))))
-(defmethod diet :herbivore [a] (str "Name=" (get a :name)))
-(defmethod diet :carnivore [a] (str "B"))
-(defmethod diet :default [a] (str "I don't know what " a " eats."))
+(defmulti diet (fn [x] (:eater x)))
+(defmethod diet :herbivore [a] (str (get a :name) " eats veggies."))
+(defmethod diet :carnivore [a] (str (get a :name) " eats animals."))
+(defmethod diet :default [a] (str "I don't know what " (get a :name) " eats."))
 
 (meditations
   "Some functions can be used in different ways - with no arguments"
